@@ -64,7 +64,7 @@ GRANT EXECUTE ON PROCEDURE sp1 TO u2;
 evaluate '2-3 For the u2 user, the execution succeeds. The Revoke command fails because he is not the owner.';
 call login('u2','') on class db_user;
 SELECT grantor.name, grantee.name, object_type, object_of, auth_type, is_grantable FROM _db_auth WHERE grantee.name = 'U2';
-REVOKE EXECUTE ON PROCEDURE sp1 FROM u2;
+REVOKE EXECUTE ON PROCEDURE dba.sp1 FROM u2;
 SELECT grantor.name, grantee.name, object_type, object_of, auth_type, is_grantable FROM _db_auth WHERE grantee.name = 'U2';
 CALL dba.sp1 ();
 

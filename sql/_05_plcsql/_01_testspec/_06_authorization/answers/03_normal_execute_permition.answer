@@ -199,9 +199,8 @@ DBA     U2     5     _db_stored_procedure     EXECUTE     0
 
 
 ===================================================
-Error:-494
-Semantic: before '  FROM u2; '
-Stored procedure/function "u2.sp1" does not exist. revoke execute on procedure on [u2.sp1] from u2
+Error:-150
+Cannot revoke privileges from self.
 
 ===================================================
 grantor.name    grantee.name    object_type    object_of    auth_type    is_grantable    
