@@ -13,9 +13,6 @@
 0
 
 ===================================================
-0
-
-===================================================
     
 1. error - Granting unavailable permissions.     
 
@@ -150,6 +147,11 @@ Syntax: missing class spec list
 ===================================================
 Error:-493
 Syntax: missing class spec list 
+
+===================================================
+Error:-494
+Semantic: before '  TO u1; '
+Stored procedure/function "dba.xxx_sp1" does not exist. grant execute on procedure on [dba.xxx_sp1] to u1
 
 ===================================================
     

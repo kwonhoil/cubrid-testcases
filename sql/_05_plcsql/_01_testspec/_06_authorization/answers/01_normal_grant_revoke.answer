@@ -13,9 +13,6 @@
 0
 
 ===================================================
-0
-
-===================================================
 grantor.name    grantee.name    object_type    object_of    auth_type    is_grantable    
 
 
@@ -112,7 +109,7 @@ Stored procedure/function 'u1.sp2' does not exist.
 
 ===================================================
     
-2-2. sucess.( SELECT dba.sp1();      
+2-2. success.( SELECT dba.sp1(); )     
 
 
 ===================================================

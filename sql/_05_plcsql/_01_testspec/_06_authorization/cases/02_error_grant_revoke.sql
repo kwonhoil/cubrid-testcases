@@ -3,7 +3,6 @@
 -- Support grant/revoke authorization for stored procedures( error case )
 
 evaluate '0. create procedure & user';
-SET SYSTEM PARAMETERS 'print_object_as_oid=yes';
 CREATE OR REPLACE FUNCTION sp1() return varchar as begin return 'hello'; end;
 CREATE OR REPLACE PROCEDURE sp2() as begin dbms_output.put_line('call sp2'); end;
 CREATE USER u1;
@@ -48,8 +47,9 @@ GRANT SELECT ON PROCEDURE sp2 TO t2;
 
 
 evaluate '4. error - Grant processing for non-existent procedures.';
-GRANT SELECT ON PROCEDURE xxx_sp1 TO t2;
-GRANT SELECT ON PROCEDURE xxx_sp2 TO t2;
+GRANT SELECT ON PROCEDURE xxx_sp1 TO u1;
+GRANT SELECT ON PROCEDURE xxx_sp2 TO u1;
+GRANT EXECUTE ON PROCEDURE xxx_sp1 TO u1;
 
 
 evaluate '5. error - Typo(grants, revokes, AS, FOR )';

@@ -3,7 +3,6 @@
 -- Support grant/revoke authorization for stored procedures
 
 evaluate '1. create function and search with u1(not granted)';
-SET SYSTEM PARAMETERS 'print_object_as_oid=yes';
 CREATE OR REPLACE FUNCTION sp1() return varchar as begin return 'hello'; end;
 CREATE OR REPLACE PROCEDURE sp2() as begin dbms_output.put_line('call sp2'); end;
 CREATE USER u1;
@@ -35,7 +34,7 @@ call sp2();
 DROP SYNONYM u1.sp1;
 DROP SYNONYM u1.sp2;
 
-evaluate '2-2. sucess.( SELECT dba.sp1(); '; 
+evaluate '2-2. success.( SELECT dba.sp1(); )'; 
 SELECT dba.sp1();
 call dba.sp2();
 
@@ -74,6 +73,7 @@ call login('dba','') on class db_user;
 SET SYSTEM PARAMETERS 'print_object_as_oid=yes';
 CREATE OR REPLACE FUNCTION sp1() return varchar as begin return 'hello'; end;
 CREATE OR REPLACE PROCEDURE sp2() as begin dbms_output.put_line('call sp2'); end;
+-- CBRD-25486 : When the 'CBRD-25486' issue is resolved, records with null in the object_of column will be deleted and not displayed.
 SELECT grantor.name, grantee.name, object_type, object_of, auth_type, is_grantable FROM _db_auth WHERE grantee.name = 'U1';
 DROP FUNCTION sp1;
 DROP PROCEDURE sp2;
