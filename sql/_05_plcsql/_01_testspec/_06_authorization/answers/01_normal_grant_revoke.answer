@@ -52,9 +52,6 @@ null
 0
 
 ===================================================
-0
-
-===================================================
 grantor.name    grantee.name    object_type    object_of    auth_type    is_grantable    
 DBA     U1     5     _db_stored_procedure     EXECUTE     0     
 DBA     U1     5     _db_stored_procedure     EXECUTE     0     
@@ -140,9 +137,6 @@ null
 0
 
 ===================================================
-0
-
-===================================================
 grantor.name    grantee.name    object_type    object_of    auth_type    is_grantable    
 
 
@@ -173,9 +167,6 @@ EXECUTE authorization failure.
     
 null     
 
-
-===================================================
-0
 
 ===================================================
 0
@@ -224,9 +215,6 @@ Stored procedure/function 'dba.sp2' does not exist.
     
 null     
 
-
-===================================================
-0
 
 ===================================================
 0

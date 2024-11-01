@@ -16,7 +16,6 @@ call dba.sp2();
 
 evaluate '2. Grant permission to u1.  Call a function.';
 call login('dba','') on class db_user;
-SET SYSTEM PARAMETERS 'print_object_as_oid=yes';
 GRANT EXECUTE ON PROCEDURE sp1 TO u1;
 GRANT EXECUTE ON PROCEDURE sp2 TO u1;
 SELECT grantor.name, grantee.name, object_type, object_of, auth_type, is_grantable FROM _db_auth WHERE grantee.name = 'U1';
@@ -42,7 +41,6 @@ call dba.sp2();
 
 evaluate '3. REVOKE permission to u1.  Call a function.';
 call login('dba','') on class db_user;
-SET SYSTEM PARAMETERS 'print_object_as_oid=yes';
 REVOKE EXECUTE ON PROCEDURE sp1 FROM u1;
 REVOKE EXECUTE ON PROCEDURE sp2 FROM u1;
 SELECT grantor.name, grantee.name, object_type, object_of, auth_type, is_grantable FROM _db_auth WHERE grantee.name = 'U1';
@@ -55,7 +53,6 @@ call dba.sp2();
 
 evaluate '4. drop function.  Call a function #1.';
 call login('dba','') on class db_user;
-SET SYSTEM PARAMETERS 'print_object_as_oid=yes';
 GRANT EXECUTE ON PROCEDURE sp1 TO u1;
 GRANT EXECUTE ON PROCEDURE sp2 TO u1;
 SELECT grantor.name, grantee.name, object_type, object_of, auth_type, is_grantable FROM _db_auth WHERE grantee.name = 'U1';
@@ -70,7 +67,6 @@ call dba.sp2();
 
 evaluate '5. drop function.  Call a function #2.';
 call login('dba','') on class db_user;
-SET SYSTEM PARAMETERS 'print_object_as_oid=yes';
 CREATE OR REPLACE FUNCTION sp1() return varchar as begin return 'hello'; end;
 CREATE OR REPLACE PROCEDURE sp2() as begin dbms_output.put_line('call sp2'); end;
 -- CBRD-25486 : When the 'CBRD-25486' issue is resolved, records with null in the object_of column will be deleted and not displayed.
