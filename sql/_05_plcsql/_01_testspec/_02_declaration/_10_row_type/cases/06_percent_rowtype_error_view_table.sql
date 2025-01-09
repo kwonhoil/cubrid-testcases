@@ -3,8 +3,6 @@
 -- Support RECORD types and %ROWTYPE feature
 
 -- create table, insert data
-drop table IF EXISTS type_unsupport_tbl ;
-
 create table type_unsupport_tbl (
    ID INT AUTO_INCREMENT,
    T_TIMESTAMPLTZ TIMESTAMPLTZ,
@@ -219,6 +217,16 @@ begin
     execute immediate 'select * from type_unsupport where ID=2' into r;
     dbms_output.put_line(r.id);
 end;
+
+
+
+evaluate '15. dummy procedure';
+create or replace procedure test_rowtype as
+begin
+    dbms_output.put_line('dummy procedure');
+end;
+
+drop procedure test_rowtype;
 
 
 drop view type_unsupport ;

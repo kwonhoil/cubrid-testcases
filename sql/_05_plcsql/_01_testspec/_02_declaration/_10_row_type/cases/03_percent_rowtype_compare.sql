@@ -2,9 +2,6 @@
 -- verified the CBRD-25056, CBRD-25666
 -- Support RECORD types and %ROWTYPE feature
 
-drop table IF EXISTS plcsql_support_tbl ;
-drop table IF EXISTS plcsql_unsupport_tbl ;
-
 create table plcsql_support_tbl (
 ID INT,
 T_SHORT SHORT,
@@ -67,8 +64,28 @@ create or replace procedure test_rowtype as
     p c%ROWTYPE;
     
 begin
-    if (r IS NOT NULL) AND (r.id IS NULL) AND (r.T_SHORT IS NULL) AND (r.T_SMALLINT IS NULL) AND 
-       (r2.T_SMALLINT         IS NULL ) AND   (r2.T_INTEGER          IS NULL ) AND  (r2.T_INT              IS NULL ) AND  (r2.T_BIGINT           IS NULL ) AND  (r2.T_NUMERIC          IS NULL ) AND  (r2.T_DECIMAL          IS NULL ) AND  (r2.T_FLOAT            IS NULL ) AND  (r2.T_REAL             IS NULL ) AND  (r2.T_DOUBLE           IS NULL ) AND  (r2.T_DATE             IS NULL ) AND  (r2.T_TIME             IS NULL ) AND  (r2.T_TIMESTAMP        IS NULL ) AND  (r2.T_DATETIME         IS NULL ) AND  (r2.T_CHAR             IS NULL ) AND  (r2.T_VARCHAR          IS NULL ) AND  (r2.T_VARCHAR_DATE     IS NULL ) AND  (r2.T_VARCHAR_TIME     IS NULL ) AND  (r2.T_VARCHAR_DATETIME IS NULL ) AND  (r2.T_VARCHAR_NUMBER   IS NULL )
+    if (r IS                NOT NULL ) AND 
+       (r.id                 IS NULL ) AND 
+       (r.T_SHORT            IS NULL ) AND 
+       (r.T_SMALLINT         IS NULL ) AND 
+       (r.T_INTEGER          IS NULL ) AND  
+       (r.T_INT              IS NULL ) AND  
+       (r.T_BIGINT           IS NULL ) AND  
+       (r.T_NUMERIC          IS NULL ) AND  
+       (r.T_DECIMAL          IS NULL ) AND  
+       (r.T_FLOAT            IS NULL ) AND  
+       (r.T_REAL             IS NULL ) AND  
+       (r.T_DOUBLE           IS NULL ) AND  
+       (r.T_DATE             IS NULL ) AND  
+       (r.T_TIME             IS NULL ) AND  
+       (r.T_TIMESTAMP        IS NULL ) AND  
+       (r.T_DATETIME         IS NULL ) AND  
+       (r.T_CHAR             IS NULL ) AND  
+       (r.T_VARCHAR          IS NULL ) AND  
+       (r.T_VARCHAR_DATE     IS NULL ) AND  
+       (r.T_VARCHAR_TIME     IS NULL ) AND  
+       (r.T_VARCHAR_DATETIME IS NULL ) AND  
+       (r.T_VARCHAR_NUMBER   IS NULL )
     then
        dbms_output.put_line('r is not null');
        dbms_output.put_line('r.* columns is null');
@@ -76,11 +93,91 @@ begin
        dbms_output.put_line('r rowtype bug');
     end if;
 
+
+    if (r2 IS                NOT NULL ) AND
+       (r2.id                 IS NULL ) AND
+       (r2.T_SHORT            IS NULL ) AND
+       (r2.T_SMALLINT         IS NULL ) AND
+       (r2.T_INTEGER          IS NULL ) AND
+       (r2.T_INT              IS NULL ) AND
+       (r2.T_BIGINT           IS NULL ) AND
+       (r2.T_NUMERIC          IS NULL ) AND
+       (r2.T_DECIMAL          IS NULL ) AND
+       (r2.T_FLOAT            IS NULL ) AND
+       (r2.T_REAL             IS NULL ) AND
+       (r2.T_DOUBLE           IS NULL ) AND
+       (r2.T_DATE             IS NULL ) AND
+       (r2.T_TIME             IS NULL ) AND
+       (r2.T_TIMESTAMP        IS NULL ) AND
+       (r2.T_DATETIME         IS NULL ) AND
+       (r2.T_CHAR             IS NULL ) AND
+       (r2.T_VARCHAR          IS NULL ) AND
+       (r2.T_VARCHAR_DATE     IS NULL ) AND
+       (r2.T_VARCHAR_TIME     IS NULL ) AND
+       (r2.T_VARCHAR_DATETIME IS NULL ) AND
+       (r2.T_VARCHAR_NUMBER   IS NULL )
+    then
+       dbms_output.put_line('r2 is not null');
+       dbms_output.put_line('r2.* columns is null');
+    else
+       dbms_output.put_line('r2 rowtype bug');
+    end if;
+
+
+    if (r3 IS                NOT NULL ) AND
+       (r3.id                 IS NULL ) AND
+       (r3.T_SHORT            IS NULL ) AND
+       (r3.T_SMALLINT         IS NULL ) AND
+       (r3.T_INTEGER          IS NULL ) AND
+       (r3.T_INT              IS NULL ) AND
+       (r3.T_BIGINT           IS NULL ) AND
+       (r3.T_NUMERIC          IS NULL ) AND
+       (r3.T_DECIMAL          IS NULL ) AND
+       (r3.T_FLOAT            IS NULL ) AND
+       (r3.T_REAL             IS NULL ) AND
+       (r3.T_DOUBLE           IS NULL ) AND
+       (r3.T_DATE             IS NULL ) AND
+       (r3.T_TIME             IS NULL ) AND
+       (r3.T_TIMESTAMP        IS NULL ) AND
+       (r3.T_DATETIME         IS NULL ) AND
+       (r3.T_CHAR             IS NULL ) AND
+       (r3.T_VARCHAR          IS NULL ) AND
+       (r3.T_VARCHAR_DATE     IS NULL ) AND
+       (r3.T_VARCHAR_TIME     IS NULL ) AND
+       (r3.T_VARCHAR_DATETIME IS NULL ) AND
+       (r3.T_VARCHAR_NUMBER   IS NULL )
+    then
+       dbms_output.put_line('r3 is not null');
+       dbms_output.put_line('r3.* columns is null');
+    else
+       dbms_output.put_line('r3 rowtype bug');
+    end if;
+
     
     open c;
     
-    if (p IS NOT NULL) AND (p.id IS NULL) AND (p.T_SHORT IS NULL) AND (p.T_SMALLINT IS NULL) AND 
-       (r2.T_SMALLINT         IS NULL ) AND   (r2.T_INTEGER          IS NULL ) AND  (r2.T_INT              IS NULL ) AND  (r2.T_BIGINT           IS NULL ) AND  (r2.T_NUMERIC          IS NULL ) AND  (r2.T_DECIMAL          IS NULL ) AND  (r2.T_FLOAT            IS NULL ) AND  (r2.T_REAL             IS NULL ) AND  (r2.T_DOUBLE           IS NULL ) AND  (r2.T_DATE             IS NULL ) AND  (r2.T_TIME             IS NULL ) AND  (r2.T_TIMESTAMP        IS NULL ) AND  (r2.T_DATETIME         IS NULL ) AND  (r2.T_CHAR             IS NULL ) AND  (r2.T_VARCHAR          IS NULL ) AND  (r2.T_VARCHAR_DATE     IS NULL ) AND  (r2.T_VARCHAR_TIME     IS NULL ) AND  (r2.T_VARCHAR_DATETIME IS NULL ) AND  (r2.T_VARCHAR_NUMBER   IS NULL )
+    if (p IS                NOT NULL ) AND
+       (p.id                 IS NULL ) AND
+       (p.T_SHORT            IS NULL ) AND
+       (p.T_SMALLINT         IS NULL ) AND
+       (p.T_INTEGER          IS NULL ) AND
+       (p.T_INT              IS NULL ) AND
+       (p.T_BIGINT           IS NULL ) AND
+       (p.T_NUMERIC          IS NULL ) AND
+       (p.T_DECIMAL          IS NULL ) AND
+       (p.T_FLOAT            IS NULL ) AND
+       (p.T_REAL             IS NULL ) AND
+       (p.T_DOUBLE           IS NULL ) AND
+       (p.T_DATE             IS NULL ) AND
+       (p.T_TIME             IS NULL ) AND
+       (p.T_TIMESTAMP        IS NULL ) AND
+       (p.T_DATETIME         IS NULL ) AND
+       (p.T_CHAR             IS NULL ) AND
+       (p.T_VARCHAR          IS NULL ) AND
+       (p.T_VARCHAR_DATE     IS NULL ) AND
+       (p.T_VARCHAR_TIME     IS NULL ) AND
+       (p.T_VARCHAR_DATETIME IS NULL ) AND
+       (p.T_VARCHAR_NUMBER   IS NULL )
     then
        dbms_output.put_line('p is not null');
        dbms_output.put_line('p.* columns is null');

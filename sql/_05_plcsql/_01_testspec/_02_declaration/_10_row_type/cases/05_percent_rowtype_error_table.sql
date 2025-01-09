@@ -227,7 +227,13 @@ begin
 end;
 
 
+evaluate '15. dummy procedure';
+create or replace procedure test_rowtype as
+begin
+    dbms_output.put_line('dummy procedure');
+end;
 
+drop procedure test_rowtype;
 drop table type_unsupport ;
 
 --+ server-message off

@@ -2,9 +2,6 @@
 -- verified the CBRD-25056
 -- Support RECORD types and %ROWTYPE feature
 
-drop table IF EXISTS plcsql_support_tbl ;
-drop table IF EXISTS plcsql_unsupport_tbl ;
-
 create table plcsql_support_tbl (
 ID INT,
 T_SHORT SHORT,

@@ -2,9 +2,6 @@
 0
 
 ===================================================
-0
-
-===================================================
 1
 
 ===================================================
@@ -247,6 +244,17 @@ Stored procedure compile error: the SELECT statement contains a column T_SEQUENC
 Error:-1360
 In line 2, column 3
 Stored procedure compile error: the SELECT statement contains a column T_LIST of an unsupported type SEQUENCE
+
+===================================================
+    
+15. dummy procedure     
+
+
+===================================================
+0
+
+===================================================
+0
 
 ===================================================
 0
