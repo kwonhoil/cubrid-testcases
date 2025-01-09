@@ -18,7 +18,7 @@ END;
 CALL test_prc();
 
 
-EVALUATE 'CASE 2. Error : Change the column length from 3 to 5 and enter data.';
+EVALUATE 'CASE 2. Error : Change the column length from 10 to 14 and enter data.';
 drop table tbl1;
 create table tbl1 ( col1 varchar(10), col2 varchar(14) );
 insert into tbl1 values('2', '1234567890ab');

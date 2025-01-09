@@ -23,7 +23,7 @@ null
 col1 ===> sysdate
 ===================================================
     
-CASE 2. Error : Change the column length from 3 to 5 and enter data.     
+CASE 2. Error : Change the column length from 10 to 14 and enter data.     
 
 
 ===================================================
